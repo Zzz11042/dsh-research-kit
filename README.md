@@ -26,13 +26,14 @@ dsh-research-kit/
 ├── skills/
 │   ├── local-first-research.md
 │   └── session-memory.md
+├── .github/CONTRIBUTING.md
 ├── LICENSE
 └── README.md
 ```
 
 ## Install
 
-The plugin is a DSH host bundle. Copy or git-clone this repo's `plugin/` directory, then install through `plugin_manager` (`install_bundle` with the absolute package directory as `target`). The plugin's `dsh.bundle.patch` field points at `cordis.patch.yml`, which inserts one plugin row.
+The plugin is a DSH host bundle. Copy or git-clone this repo's `plugin/` directory into a profile, then install through `plugin_manager` (`install_bundle` with the absolute package directory as `target`). The plugin's `dsh.bundle.patch` field points at `cordis.patch.yml`, which inserts one plugin row.
 
 Install the two skills by copying the markdown files into a skills root DSH scans (`<dshHome>/skills`, `<projectRoot>/.dsh/skills`, or `Config.customSkillDirs`):
 
@@ -82,10 +83,10 @@ The `local-first-research` skill encodes that discipline; `dsh-research-kit` mak
 ```sh
 cd plugin
 node --check index.js            # syntax
-node test/index.js               # run the test harness
+node test/index.js               # run the test harness (plain node:assert, mock ctx.fs)
 ```
 
-Tests use plain Node assertions against a fixture KB in `plugin/test/`; no framework.
+See `.github/CONTRIBUTING.md` for the tool-addition checklist.
 
 ## License
 
