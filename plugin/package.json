@@ -1,0 +1,23 @@
+{
+  "name": "dsh-research-kit",
+  "version": "0.1.0",
+  "description": "Local-first research plugin for DeepSeek Harness: kb_grep, kb_list, kb_save over a markdown knowledge base",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
